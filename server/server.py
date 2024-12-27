@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify,render_template #render template
-import util
+from . import util 
 import streamlit
+
 app = Flask(__name__)
 
 @app.route('/get_location_names', methods=['GET'])
