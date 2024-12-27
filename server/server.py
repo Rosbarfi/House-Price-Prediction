@@ -4,6 +4,10 @@ import streamlit
 
 app = Flask(__name__)
 
+@app.route('/')
+def index():
+    return render_template('index.html')
+
 @app.route('/get_location_names', methods=['GET'])
 def get_location_names():
     response = jsonify({
