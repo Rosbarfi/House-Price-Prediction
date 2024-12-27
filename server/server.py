@@ -1,8 +1,10 @@
 from flask import Flask, request, jsonify,render_template #render template
 from . import util 
 import streamlit
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/')
 def index():
@@ -34,4 +36,4 @@ def predict_home_price():
 if __name__ == "__main__":
     print("Starting Python Flask Server For Home Price Prediction...")
     util.load_saved_artifacts()
-    app.run()
+    app.run(debug=True)
